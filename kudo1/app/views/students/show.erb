@@ -1,0 +1,20 @@
+<h1>Students From Flatiron<h1>
+<h2>Student: <%= @student.name%></h2>
+<h2>Grade: <%= @student.grade%></h2>
+
+<hr>
+
+
+<% @student.kudos.each do |kudo|%>
+<h1>👏 <%= kudo.kudo%> 👏</h1><br>
+<h2>Teacher:<%= link_to kudo.teacher.teacher_name, teacher_path(kudo.teacher)%></h2>
+<h2>Room: <%= kudo.teacher.room %>
+<h2> Subject: <%= kudo.teacher.subject%>
+<hr>
+<%end%>
+
+
+
+
+
+

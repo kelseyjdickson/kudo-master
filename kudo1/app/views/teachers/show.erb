@@ -1,0 +1,16 @@
+<h1 style="text-align: center">Teacher at Flatiron: <%=  @teacher.teacher_name%><h1>
+
+<h2 style="text-align: center">Class: <%= @teacher.subject%></h2>
+<h2 style="text-align: center">Room Number: <%= @teacher.room%></h2>
+
+<hr>
+
+<% @teacher.kudos.each do |kudo|%>
+<h1>👏 <%= kudo.kudo%> 👏</h1>
+<h2>Student: <%= kudo.student.name%></h2>
+<h2>Grade: <%= kudo.student.grade%>
+<%= button_to "Edit Kudos", edit_kudo_path(kudo), :method => "get" %>
+<%= button_to "Delete Kudos", kudo, :method => "delete",params:{'teacher[id]' => @teacher.id} %>
+<hr>
+
+<%end%>

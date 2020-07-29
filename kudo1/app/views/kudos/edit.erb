@@ -1,0 +1,25 @@
+<h1>Edit a Kudos!</h1>
+<p>Kudos are contagious, so let's give one..<p>
+<hr>
+
+<%= form_with model: @kudo do |f| %>
+    
+    <%= f.label :student_id%>
+    <%= f.collection_select :student_id, Student.all, :id, :name%><br>
+     
+       
+   
+  
+    <br>
+    <%= f.label :teacher_id%>
+    <%= f.collection_select :teacher_id, Teacher.all, :id, :teacher_name%><br>
+    
+
+   
+    <%= f.label :kudos %>
+    <%= f.text_area :kudo %>
+  
+   
+    <br>
+    <%= f.submit "Edit Kudo" %>
+<% end %>
